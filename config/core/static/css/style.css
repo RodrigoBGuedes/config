@@ -1,0 +1,35 @@
+.main-footer{
+    background-color: #6d8d3e;
+}
+
+.rights{
+    background-color: #405920;
+}
+
+.jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    margin-right: 1.5rem;
+    background-color: #d3d6d9;
+    border-radius: 0.3rem;
+}
+
+body{
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+}
+
+.botao_apt{
+    padding: 10px;
+    background-color: #5288da;
+    color: #ffffff;
+    border:none;
+    border-radius: .60rem;
+}
+.botao_apt:hover{
+    background-color: #1553ec;
+    transition: 0.6s;
+}

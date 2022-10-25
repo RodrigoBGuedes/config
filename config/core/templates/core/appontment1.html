@@ -1,0 +1,31 @@
+{% extends 'core/core.html' %}
+{% load static %}
+{% block title %} Config - Appointments {% endblock title %}
+{% block description %} Appointments Page {% endblock description %}
+{% block css %}
+    <style>
+    .required:after {
+        content: "*";
+        color:red;
+    }
+    .errorlist {
+        list-style: none;
+        color: red;
+    }
+    </style>
+{% endblock css %}
+
+{% block body %}
+    <h2>Formulário</h2>
+    <div class="cols-6">
+        <form class="form-horizontal" action="." method="post">
+            {% csrf_token %}
+            <div class="col-sm-6">
+                {{ forms.as_div }}
+            </div>
+            <div class="form-control">
+                <button type="submit" class="btn btn-primary align-content-center">Submit</button>
+            </div>
+        </form>
+    </div>
+{% endblock body %}

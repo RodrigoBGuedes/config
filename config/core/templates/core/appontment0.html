@@ -1,0 +1,35 @@
+{% extends 'core/core.html' %}
+{% load static %}
+{% block title %} Config - Appointments {% endblock title %}
+{% block description %} Appointments Page {% endblock description %}
+{% block body %}
+    <body class="vsc-initialized">
+    <div class="container-fluid ">
+        <div class="row">
+            {{ forms }}
+            <div class="col-md-4"></div>
+            <div class="mt-2 col-md-4 align-content-center">
+                <form action="." method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="box" class="form-label">Box:</label>
+                        <input name="box" type="text" placeholder="{{ forms.box.label }}" class="form-control"
+                               minlength="{{ forms.box.min_length }}" maxlength="{{ forms.box.max_length }}"
+                               id="id_box" value="{{ forms.box.data|default_if_none:'' }}"/>
+                        <span id="id_box" class="form-text">
+                    Must be 24 characters long.
+                    </span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="material" class="form-label">Material:</label>
+                        <input name="material" placeholder="{{ forms.material.label }}" type="text" class="form-control"
+                               maxlength="{{ forms.material.max_length }}" minlength="{{ forms.material.min_length }}"
+                               id="id_material" value="{{ forms.material.data|default_if_none:'' }}">
+                    </div>
+                    <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </body>
+{% endblock body %}
