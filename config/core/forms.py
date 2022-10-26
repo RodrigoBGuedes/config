@@ -7,9 +7,9 @@ from django import forms
 
 
 class AppontmentForm(forms.ModelForm):
-    box = forms.CharField(min_length=24, max_length=24, required=True)
+    box = forms.CharField(min_length=24, max_length=24, required=True, label='Box Number')
 
-    material = forms.CharField(max_length=64, required=True)
+    material = forms.CharField(max_length=64, required=True, label='Material Number')
 
     class Meta:
         model = Appontment
