@@ -14,3 +14,10 @@ class AppontmentForm(forms.ModelForm):
     class Meta:
         model = Appontment
         exclude = ["box", "material"]
+
+    def clean_box(self):
+        b = self.cleaned_data['box']
+        if Box.objects.filter(code_box=b).exists():
+            raise ValidationError("The box {} is already created".format(b))
+
+        return b

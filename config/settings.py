@@ -31,9 +31,9 @@ DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
-LOGIN_URL = '/contas/login/'
+LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/appontment/'
-LOGOUT_REDIRECT_URL = '/contas/login/'
+LOGOUT_REDIRECT_URL = '/accounts/login/'
 
 # Application definition
 

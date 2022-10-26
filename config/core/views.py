@@ -12,7 +12,7 @@ from config.core.forms import AppontmentForm
 # Create your views here.
 
 def login(request):
-    response = redirect('/contas/login/')
+    response = redirect('/accounts/login/')
     return response
     # return render(request, 'core/core.html', {})
 
