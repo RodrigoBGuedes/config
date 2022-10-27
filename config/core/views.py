@@ -21,19 +21,13 @@ def login(request):
 def appontment_creator(request):
     form = AppontmentForm(request.POST or None)
     if request.method == 'POST':
-        box_code = request.POST.get('box')
-        material_code = request.POST.get('material')
-        # if box_code == str(Box.objects.get(code_box=box_code)) and \
-        #         material_code == str(Material.objects.get(code_material=material_code)):
-        #     raise ValidationError(_("The inputs doesn't exist"), params={'box_code': box_code})
         if form.is_valid():
             new_appontment = form.save(commit=False)
             new_appontment.box = Box.objects.filter(code_box=form.cleaned_data['box']).first()
             new_appontment.material = Material.objects.filter(code_material=form.cleaned_data['material']).first()
             new_appontment.creator = request.user
             new_appontment.save()
-
-            return redirect('/appontment/')
+            form = AppontmentForm()
 
     context = {'form': form}
     return render(request, 'core/appontment.html', context)
