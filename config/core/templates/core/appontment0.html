@@ -34,6 +34,7 @@
                    maxlength="{{ form.box.max_length }}" minlength="{{form.box.min_length}}"
                    required id="id_box" value="{{ form.box.data|default_if_none:'' }}">
         </div>
+        {{ form.box.errors }}
         <div class="mt-2">
             <label for="id_material">Material:</label>
         </div>
@@ -42,6 +43,7 @@
                    maxlength="{{ form.material.max_length }}" required id="id_material"
                    value="{{ form.material.data|default_if_none:'' }}">
         </div>
+        {{ form.material.errors }}
         <div class="mt-2">
             <button type="submit" class="botao_apt">Save</button>
         </div>

@@ -18,13 +18,15 @@ class AppontmentForm(forms.ModelForm):
     def clean_box(self):
         b = self.cleaned_data['box']
         if not Box.objects.filter(code_box=b).exists():
-            raise forms.ValidationError(_("The box you entered is invalid"))
+            raise forms.ValidationError(_(f"The box {b} is invalid"))
+        if Box.objects.filter(code_box=b, is_empty=False):
+            raise forms.ValidationError(_(f"The box {b} is not empty"))
 
         return b
 
     def clean_material(self):
         m = self.cleaned_data['material']
         if not Material.objects.filter(code_material=m).exists():
-            raise forms.ValidationError(_("The Material you entered is invalid"))
+            raise forms.ValidationError(_(f"The Material code {m} is invalid"))
 
         return m
