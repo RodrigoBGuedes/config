@@ -27,6 +27,7 @@ def appontment_creator(request):
             new_appontment.material = Material.objects.filter(code_material=form.cleaned_data['material']).first()
             new_appontment.creator = request.user
             new_appontment.save()
+            Box.objects.filter(code_box=form.cleaned_data['box']).update(is_empty=False)
             form = AppontmentForm()
 
     context = {'form': form}
