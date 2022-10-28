@@ -27,6 +27,6 @@ class AppontmentForm(forms.ModelForm):
     def clean_material(self):
         m = self.cleaned_data['material']
         if not Material.objects.filter(code_material=m).exists():
-            raise forms.ValidationError(_(f"The Material code {m} is invalid"))
+            raise forms.ValidationError(_(f"The Material {m} is invalid"))
 
         return m

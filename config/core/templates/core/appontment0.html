@@ -33,6 +33,7 @@
             <input type="text" placeholder="{{form.box.label}}" name="box"
                    maxlength="{{ form.box.max_length }}" minlength="{{form.box.min_length}}"
                    required id="id_box" value="{{ form.box.data|default_if_none:'' }}">
+            {{ form.box.max_length }}
         </div>
         {{ form.box.errors }}
         <div class="mt-2">

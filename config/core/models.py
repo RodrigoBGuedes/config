@@ -5,6 +5,7 @@ from django.db import models
 from ordered_model.models import OrderedModel
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import User
+from django.core.validators import MinLengthValidator
 
 
 # Create your models here.
@@ -18,7 +19,10 @@ class Material(OrderedModel):
 
 
 class Box(OrderedModel):
-    code_box = models.CharField(max_length=24, unique=True, verbose_name=_('code'))
+    code_box = models.CharField(
+        max_length=24,
+        unique=True, verbose_name=_('code'),
+        validators=[MinLengthValidator(24)])
     description = models.TextField(max_length=64, verbose_name=_('description'))
     is_empty = models.BooleanField(default=False, verbose_name=_('empty'))
 

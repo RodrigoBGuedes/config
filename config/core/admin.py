@@ -15,6 +15,9 @@ class Material(OrderedModelAdmin):
 class Box(OrderedModelAdmin):
     list_display = ('code_box', 'description', 'is_empty', 'move_up_down_links')
 
+    class Media:
+        js = ['js/scripts.js', 'js/jquery.min.js']
+
 
 @admin.register(Appontment)
 class AppontmentAdmin(OrderedModelAdmin):

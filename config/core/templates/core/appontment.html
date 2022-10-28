@@ -18,9 +18,6 @@
     label {
         display: contents;
     }
-    .errorlist{
-        color: red;
-    }
 </style>
 </head>
 <body class="mt-2">
@@ -28,20 +25,25 @@
     <form class="mt-2" action="." method="post">
         <h2>Appointment</h2>
         {% csrf_token %}
+{#        {{ form.as_div }}#}
         <div>
-            <label for="id_box">Box:</label>
+            <label for="{{ form.box.id_for_label }}">Box:</label>
         </div>
         <div>
-            {{ form.box }}
-            {{ form.box.errors }}
+            <input type="text" placeholder="{{form.box.label}}" name="{{ form.box.html_name }}"
+                   maxlength="{{ form.box.max_length }}" minlength="{{form.box.min_length}}"
+                   id="{{ form.box.id_for_label }}" value="{{ form.box.data|default_if_none:'' }}" required>
         </div>
+        {{ form.box.errors }}
         <div class="mt-2">
-            <label for="id_material">Material:</label>
+            <label for="{{ form.material.id_for_label }}">Material:</label>
         </div>
         <div>
-            {{ form.material }}
-            {{ form.material.errors }}
+            <input type="text" name="{{ form.material.html_name }}" placeholder="{{ form.material.label }}"
+                   maxlength="{{ form.material.max_length }}" id="{{ form.material.id_for_label }}" required
+                   value="{{ form.material.data|default_if_none:'' }}">
         </div>
+        {{ form.material.errors }}
         <div class="mt-2">
             <button type="submit" class="botao_apt">Save</button>
         </div>

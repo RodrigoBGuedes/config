@@ -1,14 +1,12 @@
 // Empty JS for your own code to be here
 
 $(document).ready(function () {
-    $('input').bind('input', function () {
-        var c = this.selectionStart,
-            r = /[^a-z0-9 .]/gi,
-            v = $(this).val();
-        if (r.test(v)) {
-            $(this).val(v.replace(r, ''));
-            c--;
+    $('input').on('keypress', function (event) {
+        var regex = new RegExp("^[a-zA-Z0-9]+$");
+        var key = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+        if (!regex.test(key)) {
+            event.preventDefault();
+            return false;
         }
-        this.setSelectionRange(c, c);
     });
 });

@@ -29,14 +29,14 @@
         <h2>Appointment</h2>
         {% csrf_token %}
         <div>
-            <label for="id_box">Box:</label>
+            <label for="{{ form.box.id_for_label }}">Box:</label>
         </div>
         <div>
             {{ form.box }}
             {{ form.box.errors }}
         </div>
         <div class="mt-2">
-            <label for="id_material">Material:</label>
+            <label for="{{ form.material.id_for_label }}">Material:</label>
         </div>
         <div>
             {{ form.material }}
