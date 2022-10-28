@@ -11,6 +11,7 @@ class Material(OrderedModelAdmin):
     list_display = ('code_material', 'description', 'move_up_down_links')
 
 
+
 @admin.register(Box)
 class Box(OrderedModelAdmin):
     list_display = ('code_box', 'description', 'is_empty', 'move_up_down_links')
