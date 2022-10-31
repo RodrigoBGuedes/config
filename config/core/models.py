@@ -30,7 +30,7 @@ class Box(OrderedModel):
         return self.code_box
 
 
-class Appontment(OrderedModel):
+class Appointment(OrderedModel):
     box = models.ForeignKey(
         Box, on_delete=models.PROTECT, related_name="log_box", verbose_name=_('box'))
 

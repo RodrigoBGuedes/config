@@ -17,8 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 
+from config.core.views import page_logout, appointment_scan, appointment_voice, core_page
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('config.core.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('logout', page_logout, name='logout'),
+    path('appointment_scan', appointment_scan, name='appointment_scan'),
+    path('appointment_voice', appointment_voice, name='appointment_voice'),
+    path('core', core_page, name='core_page'),
 ]

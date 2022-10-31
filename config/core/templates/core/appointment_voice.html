@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=500, initial-scale=1.0">
 
     <title>{% block title %}Appointment{% endblock title %}</title>
 
@@ -18,32 +18,35 @@
     label {
         display: contents;
     }
+    .errorlist{
+        color: #e50404;
+    }
 </style>
 </head>
 <body class="mt-2">
 {% if user.is_authenticated %}
-    <form class="mt-2" action="." method="post">
-        <h2>Appointment</h2>
+    <form class="mt-2" method="post">
+        <h4>Voice Appointment</h4>
         {% csrf_token %}
 {#        {{ form.as_div }}#}
         <div>
-            <label for="{{ form.box.id_for_label }}">Box:</label>
+            <label for="{{ form_voice.box.id_for_label }}">Box:</label>
         </div>
         <div>
-            <input type="text" placeholder="{{form.box.label}}" name="{{ form.box.html_name }}"
-                   maxlength="{{ form.box.max_length }}" minlength="{{form.box.min_length}}"
-                   id="{{ form.box.id_for_label }}" value="{{ form.box.data|default_if_none:'' }}" required>
+            <input type="text" placeholder="{{form_voice.box.label}}" name="{{ form_voice.box.html_name }}"
+                   maxlength="{{ form_voice.box.max_length }}" minlength="{{ form_voice.box.min_length }}"
+                   id="{{ form_voice.box.id_for_label }}" value="{{ form_voice.box.data|default_if_none:'' }}" required>
         </div>
-        {{ form.box.errors }}
+        {{ form_voice.box.errors }}
         <div class="mt-2">
-            <label for="{{ form.material.id_for_label }}">Material:</label>
+            <label for="{{ form_voice.material.id_for_label }}">Material:</label>
         </div>
         <div>
-            <input type="text" name="{{ form.material.html_name }}" placeholder="{{ form.material.label }}"
-                   maxlength="{{ form.material.max_length }}" id="{{ form.material.id_for_label }}" required
-                   value="{{ form.material.data|default_if_none:'' }}">
+            <input type="text" name="{{ form_voice.material.html_name }}" placeholder="{{ form_voice.material.label }}"
+                   maxlength="{{ form_voice.material.max_length }}" id="{{ form_voice.material.id_for_label }}" required
+                   value="{{ form_voice.material.data|default_if_none:'' }}">
         </div>
-        {{ form.material.errors }}
+        {{ form2.material.errors }}
         <div class="mt-2">
             <button type="submit" class="botao_apt">Save</button>
         </div>

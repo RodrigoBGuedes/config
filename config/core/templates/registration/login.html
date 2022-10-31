@@ -18,10 +18,18 @@
 <div style=" text-align: center;">
     {% if user.is_authenticated %}
         <h1>Already Logged!</h1>
+        <div>
+        <form action="{% url 'core_page' %}" method="POST" class="btn btn-lg btn-block" >
+            {% csrf_token %}
+            <input type="submit" value="Menu">
+        </form>
+        </div>
+        <div>
         <form action="{% url 'logout' %}" method="POST" id="logout" class="btn btn-lg btn-block">
             {% csrf_token %}
             <input type="submit" value="Logout">
         </form>
+        </div>
     {% else %}
         <h2>LOGIN</h2>
         <form method="post">

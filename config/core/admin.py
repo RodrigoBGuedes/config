@@ -1,7 +1,7 @@
 from django.contrib import admin
 from ordered_model.admin import OrderedModelAdmin
 
-from config.core.models import Material, Box, Appontment
+from config.core.models import Material, Box, Appointment
 
 
 # Register your models here.
@@ -9,7 +9,6 @@ from config.core.models import Material, Box, Appontment
 @admin.register(Material)
 class Material(OrderedModelAdmin):
     list_display = ('code_material', 'description', 'move_up_down_links')
-
 
 
 @admin.register(Box)
@@ -20,8 +19,8 @@ class Box(OrderedModelAdmin):
         js = ['js/scripts.js', 'js/jquery.min.js']
 
 
-@admin.register(Appontment)
-class AppontmentAdmin(OrderedModelAdmin):
+@admin.register(Appointment)
+class AppointmentAdmin(OrderedModelAdmin):
     list_display = (
         'created',
         'box',
