@@ -4,9 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=500, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% block title %}Appointment{% endblock title %}</title>
+    <title>{% block title %}Appointment - Voice{% endblock title %}</title>
 
     <meta name="author" content="Rodrigo Guedes">
     <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}"/>
@@ -14,47 +14,34 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/scripts.js' %}"></script>
+
 <style>
-    label {
-        display: contents;
-    }
     .errorlist{
-        color: #e50404;
+        color: red;
     }
 </style>
+
 </head>
-<body class="mt-2">
+<body>
 {% if user.is_authenticated %}
     <form class="mt-2" method="post">
-        <h4>Voice Appointment</h4>
+        <h5>Voice</h5>
         {% csrf_token %}
-{#        {{ form.as_div }}#}
         <div>
-            <label for="{{ form_voice.box.id_for_label }}">Box:</label>
-        </div>
-        <div>
-            <input type="text" placeholder="{{form_voice.box.label}}" name="{{ form_voice.box.html_name }}"
+            <input type="text" placeholder="{{form_voice.box.label}}" name="{{ form_voice.box.html_name }}" class="form-control"
                    maxlength="{{ form_voice.box.max_length }}" minlength="{{ form_voice.box.min_length }}"
                    id="{{ form_voice.box.id_for_label }}" value="{{ form_voice.box.data|default_if_none:'' }}" required>
         </div>
         {{ form_voice.box.errors }}
         <div class="mt-2">
-            <label for="{{ form_voice.material.id_for_label }}">Material:</label>
-        </div>
-        <div>
             <input type="text" name="{{ form_voice.material.html_name }}" placeholder="{{ form_voice.material.label }}"
                    maxlength="{{ form_voice.material.max_length }}" id="{{ form_voice.material.id_for_label }}" required
-                   value="{{ form_voice.material.data|default_if_none:'' }}">
+                   value="{{ form_voice.material.data|default_if_none:'' }}" class="form-control">
         </div>
-        {{ form2.material.errors }}
-        <div class="mt-2">
-            <button type="submit" class="botao_apt">Save</button>
+        {{ form_voice.material.errors }}
+        <div class="d-grid gap-2 mt-2">
+            <button type="submit" class="btn btn-primary">Save</button>
         </div>
-    </form>
-    <div class="mt-3">
-    <form action="{% url 'logout' %}" method="POST" id="logout" class="btn">
-        {% csrf_token %}
-        <input type="submit" value="Logout">
     </form>
 {% else %}
     <a href="{% url 'login' %}" class="btn btn-lg btn-block">LOGIN</a>

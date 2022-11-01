@@ -50,12 +50,13 @@ def appointment_voice(request):
     form_voice = AppointmentFormVoice(request.POST or None)
     if request.method == 'POST':
         if form_voice.is_valid():
+            box_code = form_voice.cleaned_data['box']
             new_appointment = form_voice.save(commit=False)
-            new_appointment.box = Box.objects.filter(code_box=form_voice.cleaned_data['box']).first()
+            new_appointment.box = Box.objects.filter(code_box__endswith=box_code).first()
             new_appointment.material = Material.objects.filter(code_material=form_voice.cleaned_data['material']).first()
             new_appointment.creator = request.user
             new_appointment.save()
-            Box.objects.filter(code_box=form_voice.cleaned_data['box']).update(is_empty=False)
+            Box.objects.filter(code_box__endswith=box_code).update(is_empty=False)
             form_voice = AppointmentFormVoice()
 
     context = {'form_voice': form_voice}

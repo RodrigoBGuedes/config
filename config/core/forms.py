@@ -43,10 +43,17 @@ class AppointmentFormVoice(forms.ModelForm):
 
     def clean_box(self):
         b = self.cleaned_data['box']
-        if not Box.objects.filter(code_box=b).exists():
-            raise forms.ValidationError(_(f"The box {b} is invalid"))
-        if Box.objects.filter(code_box=b, is_empty=False):
-            raise forms.ValidationError(_(f"The box {b} is not empty"))
+        get_boxes = Box.objects.filter(code_box__endswith=b)  # get_boxes é uma lista
+        if get_boxes:
+            if len(get_boxes) > 1:
+                box_list = ""
+                for boxes in get_boxes:
+                    box_list += f"{boxes.code_box}, "
+                raise forms.ValidationError(_(f"There's more than 1 box that ends with {b} \n {box_list}"))
+            elif get_boxes.filter(is_empty=False):
+                raise forms.ValidationError(_(f"The box that ends with {b} is not empty"))
+        else:
+            raise forms.ValidationError(_(f"The box that ends with {b} is invalid"))
 
         return b
 
