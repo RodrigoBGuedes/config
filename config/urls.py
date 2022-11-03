@@ -27,4 +27,5 @@ urlpatterns = [
     path('appointment_scan', appointment_scan, name='appointment_scan'),
     path('appointment_voice', appointment_voice, name='appointment_voice'),
     path('core', core_page, name='core_page'),
+    path('i18n/', include('django.conf.urls.i18n')),
 ]
