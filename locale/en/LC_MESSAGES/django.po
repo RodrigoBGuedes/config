@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-04 15:08-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\config\core\forms.py:10 .\config\core\forms.py:36
+msgid "Box Number"
+msgstr ""
+
+#: .\config\core\forms.py:12 .\config\core\forms.py:38
+msgid "Material Number"
+msgstr ""
+
+#: .\config\core\forms.py:21 .\config\core\forms.py:61
+msgid "The box is invalid"
+msgstr ""
+
+#: .\config\core\forms.py:23
+#, python-brace-format
+msgid "The box {b} is not empty"
+msgstr ""
+
+#: .\config\core\forms.py:30 .\config\core\forms.py:68
+msgid "The Material is invalid"
+msgstr ""
+
+#: .\config\core\forms.py:53
+#, python-brace-format
+msgid ""
+"There's more than 1 box with {b}: \n"
+" {box_list}"
+msgstr ""
+
+#: .\config\core\forms.py:59
+#, python-brace-format
+msgid "The box {box_list} is not empty"
+msgstr ""
+
+#: .\config\core\models.py:14 .\config\core\models.py:24
+msgid "code"
+msgstr ""
+
+#: .\config\core\models.py:15 .\config\core\models.py:26
+msgid "description"
+msgstr ""
+
+#: .\config\core\models.py:27
+msgid "empty"
+msgstr ""
+
+#: .\config\core\models.py:35
+msgid "box"
+msgstr ""
+
+#: .\config\core\models.py:38
+msgid "material"
+msgstr ""
+
+#: .\config\core\models.py:40
+msgid "creator"
+msgstr ""
+
+#: .\config\core\models.py:42
+msgid "created"
+msgstr ""
+
+#: .\config\core\templates\core\appointment_scan.html:39
+#: .\config\core\templates\core\core.html:24
+msgid "Scan"
+msgstr ""
+
+#: .\config\core\templates\core\appointment_scan.html:57
+#: .\config\core\templates\core\appointment_voice.html:58
+msgid "Save"
+msgstr ""
+
+#: .\config\core\templates\core\appointment_voice.html:40
+#: .\config\core\templates\core\core.html:28
+msgid "Voice"
+msgstr ""
+
+#: .\config\core\templates\registration\login.html:21
+msgid "Already Logged!"
+msgstr ""
+
+#: .\config\core\views.py:43 .\config\core\views.py:63
+msgid "Appointment Done"
+msgstr ""
+
+#: .\config\settings.py:125
+msgid "English"
+msgstr ""
+
+#: .\config\settings.py:126
+msgid "Portuguese"
+msgstr ""
