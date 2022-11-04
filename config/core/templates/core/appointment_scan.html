@@ -41,7 +41,7 @@
         {% csrf_token %}
         <div>
             <input type="text" placeholder="{{ form_scan.box.label }}" name="{{ form_scan.box.html_name }}"
-                   maxlength="{{ form_scan.box.max_length }}" minlength="{{ form_scan.box.min_length }}"
+                   maxlength="{{ form_scan.box.field.max_length}}" minlength="{{ form_scan.box.field.min_length }}"
                    class="form-control"
                    id="{{ form_scan.box.id_for_label }}" value="{{ form_scan.box.data|default_if_none:'' }}" required>
         </div>
@@ -49,7 +49,7 @@
         <div class="mt-2">
             <input type="text" name="{{ form_scan.material.html_name }}" placeholder="{{ form_scan.material.label }}"
                    class="form-control"
-                   maxlength="{{ form_scan.material.max_length }}" id="{{ form_scan.material.id_for_label }}" required
+                   maxlength="{{ form_scan.material.field.max_length }}" id="{{ form_scan.material.id_for_label }}" required
                    value="{{ form_scan.material.data|default_if_none:'' }}">
         </div>
         {{ form_scan.material.errors }}

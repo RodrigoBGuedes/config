@@ -43,18 +43,20 @@
         <div>
             <input type="text" placeholder="{{ form_voice.box.label }}" name="{{ form_voice.box.html_name }}"
                    class="form-control"
-                   maxlength="{{ form_voice.box.max_length }}" minlength="{{ form_voice.box.min_length }}"
+                   maxlength="{{ form_voice.box.field.max_length }}" minlength="{{ form_voice.box.field.min_length }}"
                    id="{{ form_voice.box.id_for_label }}" value="{{ form_voice.box.data|default_if_none:'' }}" required>
         </div>
         {{ form_voice.box.errors }}
         <div class="mt-2">
             <input type="text" name="{{ form_voice.material.html_name }}" placeholder="{{ form_voice.material.label }}"
-                   maxlength="{{ form_voice.material.max_length }}" id="{{ form_voice.material.id_for_label }}" required
+                   maxlength="{{ form_voice.material.field.max_length }}" id="{{ form_voice.material.id_for_label }}" required
                    value="{{ form_voice.material.data|default_if_none:'' }}" class="form-control">
         </div>
         {{ form_voice.material.errors }}
         <div class="d-grid gap-2 mt-2">
-            <button type="submit" class="btn btn-primary">{% trans 'Save' %}</button>
+            <button type="submit" id="button" class="btn btn-primary">
+                {% trans 'Save' %}
+            </button>
         </div>
     </form>
 {% else %}
