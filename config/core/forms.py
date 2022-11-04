@@ -7,9 +7,9 @@ from django import forms
 
 
 class AppointmentFormScan(forms.ModelForm):
-    box = forms.CharField(min_length=24, max_length=24, required=True, label='Box Number')
+    box = forms.CharField(min_length=24, max_length=24, required=True, label=_('Box Number'))
 
-    material = forms.CharField(max_length=64, required=True, label='Material Number')
+    material = forms.CharField(max_length=64, required=True, label=_('Material Number'))
 
     class Meta:
         model = Appointment
@@ -33,9 +33,9 @@ class AppointmentFormScan(forms.ModelForm):
 
 
 class AppointmentFormVoice(forms.ModelForm):
-    box = forms.CharField(min_length=4, max_length=4, required=True, label='Box Number')
+    box = forms.CharField(min_length=4, max_length=4, required=True, label=_('Box Number'))
 
-    material = forms.CharField(max_length=64, required=True, label='Material Number')
+    material = forms.CharField(max_length=64, required=True, label=_('Material Number'))
 
     class Meta:
         model = Appointment

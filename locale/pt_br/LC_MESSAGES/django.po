@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-04 13:08-0300\n"
+"PO-Revision-Date: 2022-11-04 13:09-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pt_BR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.2\n"
+
+#: .\config\core\forms.py:10 .\config\core\forms.py:36
+msgid "Box Number"
+msgstr "Número da Caixa"
+
+#: .\config\core\forms.py:12 .\config\core\forms.py:38
+msgid "Material Number"
+msgstr "Número do Material"
+
+#: .\config\core\forms.py:21 .\config\core\forms.py:61
+msgid "The box is invalid"
+msgstr "A caixa é inválida"
+
+#: .\config\core\forms.py:23
+#, python-brace-format
+msgid "The box {b} is not empty"
+msgstr "A caixa {b}  não está vazia"
+
+#: .\config\core\forms.py:30 .\config\core\forms.py:68
+msgid "The Material is invalid"
+msgstr "O material é inválido"
+
+#: .\config\core\forms.py:53
+#, python-brace-format
+msgid ""
+"There's more than 1 box with {b}: \n"
+" {box_list}"
+msgstr ""
+"Existe mais de uma caixa que termina em  {b}: \n"
+" {box_list}"
+
+#: .\config\core\forms.py:59
+#, python-brace-format
+msgid "The box {box_list} is not empty"
+msgstr "A caixa {box_list}  não está vazia"
+
+#: .\config\core\models.py:14 .\config\core\models.py:24
+msgid "code"
+msgstr "código"
+
+#: .\config\core\models.py:15 .\config\core\models.py:26
+msgid "description"
+msgstr "descrição"
+
+#: .\config\core\models.py:27
+msgid "empty"
+msgstr "vazio"
+
+#: .\config\core\models.py:35
+msgid "box"
+msgstr "caixa"
+
+#: .\config\core\models.py:38
+msgid "material"
+msgstr "material"
+
+#: .\config\core\models.py:40
+msgid "creator"
+msgstr "criador"
+
+#: .\config\core\models.py:42
+msgid "created"
+msgstr "data"
+
+#: .\config\core\templates\core\appointment_scan.html:57
+#: .\config\core\templates\core\appointment_voice.html:57
+msgid "Save"
+msgstr "Salvar"
+
+#: .\config\core\views.py:43 .\config\core\views.py:63
+msgid "Appointment Done"
+msgstr "Apontamento feito"
+
+#: .\config\settings.py:125
+msgid "English"
+msgstr "Inglês"
+
+#: .\config\settings.py:126
+msgid "Portuguese"
+msgstr "Português"

@@ -60,7 +60,7 @@ def appointment_voice(request):
             new_appointment.save()
             Box.objects.filter(code_box__endswith=box_code).update(is_empty=False)
             form_voice = AppointmentFormVoice()
-            messages.success(request, 'Appointment Done')
+            messages.success(request, _('Appointment Done'))
 
     context = {'form_voice': form_voice}
     return render(request, 'core/appointment_voice.html', context)
