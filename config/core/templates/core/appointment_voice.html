@@ -15,18 +15,6 @@
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/scripts.js' %}"></script>
-    <script>
-        setTimeout(function () {
-            if ($('#msg').length > 0) {
-                $('#msg').remove();
-            }
-        }, 2500)
-    </script>
-    <script>
-        $(document).ready(function () {
-            $('input:visible:enabled:first').focus();
-        });
-    </script>
     <style>
         .errorlist {
             color: #e50404;
@@ -37,7 +25,7 @@
 <body>
 {% if user.is_authenticated %}
     <form class="mt-2" method="post">
-        <h5>Voice</h5>
+        <h5>{% trans 'Voice' %}</h5>
         {% include 'core/messages.html' %}
         {% csrf_token %}
         <div>

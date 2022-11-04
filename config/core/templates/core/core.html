@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,11 +21,11 @@
 
         <h5>Menu</h5>
         <div>
-            <a href="{% url 'appointment_scan' %}" id="id_scan" class="btn btn_custom btn-danger">Scan</a>
+            <a href="{% url 'appointment_scan' %}" id="id_scan" class="btn btn_custom btn-danger">{% trans 'Scan' %}</a>
             <br/>
         </div>
         <div class="mt-2">
-            <a href="{% url 'appointment_voice' %}" id="id_voice" class="btn btn_custom btn-primary">Voice</a>
+            <a href="{% url 'appointment_voice' %}" id="id_voice" class="btn btn_custom btn-primary">{% trans 'Voice' %}</a>
             <br/>
         </div>
         <div class="mt-2">

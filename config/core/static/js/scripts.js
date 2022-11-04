@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
     $('input').on('keypress', function (event) {
         var regex = new RegExp("^[a-zA-Z0-9]+$");
@@ -9,3 +8,13 @@ $(document).ready(function () {
         }
     });
 });
+
+$(document).ready(function () {
+    $('input:visible:enabled:first').focus();
+});
+
+setTimeout(function () {
+    if ($('#msg').length > 0) {
+        $('#msg').remove();
+    }
+}, 2500)

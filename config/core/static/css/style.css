@@ -28,7 +28,7 @@ h5{
 
 .btn_custom{
     width: 190px;
-    height: 45px;
+    padding-block: 10px;
     text-align: center;
 }
 

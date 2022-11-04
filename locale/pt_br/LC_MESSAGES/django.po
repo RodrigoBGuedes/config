@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-04 13:08-0300\n"
-"PO-Revision-Date: 2022-11-04 13:09-0300\n"
+"POT-Creation-Date: 2022-11-04 15:08-0300\n"
+"PO-Revision-Date: 2022-11-04 15:10-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -81,10 +81,24 @@ msgstr "criador"
 msgid "created"
 msgstr "data"
 
+#: .\config\core\templates\core\appointment_scan.html:39
+#: .\config\core\templates\core\core.html:24
+msgid "Scan"
+msgstr "Varredura"
+
 #: .\config\core\templates\core\appointment_scan.html:57
-#: .\config\core\templates\core\appointment_voice.html:57
+#: .\config\core\templates\core\appointment_voice.html:58
 msgid "Save"
 msgstr "Salvar"
+
+#: .\config\core\templates\core\appointment_voice.html:40
+#: .\config\core\templates\core\core.html:28
+msgid "Voice"
+msgstr "Voz"
+
+#: .\config\core\templates\registration\login.html:21
+msgid "Already Logged!"
+msgstr "Login já feito!"
 
 #: .\config\core\views.py:43 .\config\core\views.py:63
 msgid "Appointment Done"
