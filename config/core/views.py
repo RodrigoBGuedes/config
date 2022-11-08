@@ -8,9 +8,6 @@ from django.utils.translation import gettext_lazy as _
 from config.core.forms import AppointmentFormScan
 
 
-# Create your views here.
-
-
 def core_page(request):
     return render(request, "core/core.html")
 
@@ -18,7 +15,6 @@ def core_page(request):
 def login(request):
     response = redirect('core_page')
     return response
-    # return render(request, 'core/core.html', {})
 
 
 def page_logout(request):
@@ -33,12 +29,20 @@ def appointment_scan(request):
     form_scan = AppointmentFormScan(request.POST or None)
     if request.method == 'POST':
         if form_scan.is_valid():
+            material_code = form_scan.cleaned_data['material']
+            box_code = form_scan.cleaned_data['box']
             new_appointment = form_scan.save(commit=False)
-            new_appointment.box = Box.objects.filter(code_box=form_scan.cleaned_data['box']).first()
-            new_appointment.material = Material.objects.filter(code_material=form_scan.cleaned_data['material']).first()
+            new_appointment.box = Box.objects.filter(code_box=box_code).first()
+
+            new_appointment.material = Material.objects.filter(
+                code_material=material_code).first()
+
+            new_appointment.related_material = Material.objects.filter(
+                code_material=new_appointment.material.code_material_related).first()
+
             new_appointment.creator = request.user
             new_appointment.save()
-            Box.objects.filter(code_box=form_scan.cleaned_data['box']).update(is_empty=False)
+            Box.objects.filter(code_box=box_code).update(is_empty=False)
             form_scan = AppointmentFormScan()
             messages.success(request, _('Appointment Done'))
 
@@ -52,10 +56,15 @@ def appointment_voice(request):
     if request.method == 'POST':
         if form_voice.is_valid():
             box_code = form_voice.cleaned_data['box']
+            material_code = form_voice.cleaned_data['material']
             new_appointment = form_voice.save(commit=False)
             new_appointment.box = Box.objects.filter(code_box__endswith=box_code).first()
             new_appointment.material = Material.objects.filter(
-                code_material=form_voice.cleaned_data['material']).first()
+                code_material=material_code).first()
+
+            new_appointment.related_material = Material.objects.filter(
+                code_material=new_appointment.material.code_material_related).first()
+
             new_appointment.creator = request.user
             new_appointment.save()
             Box.objects.filter(code_box__endswith=box_code).update(is_empty=False)

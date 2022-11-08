@@ -8,7 +8,7 @@ from config.core.models import Material, Box, Appointment
 
 @admin.register(Material)
 class Material(OrderedModelAdmin):
-    list_display = ('code_material', 'description', 'move_up_down_links')
+    list_display = ('code_material', 'code_material_related', 'move_up_down_links')
 
 
 @admin.register(Box)
@@ -25,6 +25,7 @@ class AppointmentAdmin(OrderedModelAdmin):
         'created',
         'box',
         'material',
+        'related_material',
         'creator',
     )
 
@@ -32,7 +33,7 @@ class AppointmentAdmin(OrderedModelAdmin):
 
     fieldsets = (
         (None, {
-            'fields': ('box', 'material')
+            'fields': ('box', 'material', 'related_material')
         }),
         ('Log', {
             'classes': ('collapse',),
@@ -40,7 +41,4 @@ class AppointmentAdmin(OrderedModelAdmin):
         })
     )
 
-    def save_model(self, request, obj, form, change):
-        # Passar request como argumento.
-        obj.created_updated(request)
-        super().save_model(request, obj, form, change)
+

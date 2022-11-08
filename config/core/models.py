@@ -12,10 +12,16 @@ from django.core.validators import MinLengthValidator
 
 class Material(OrderedModel):
     code_material = models.CharField(max_length=64, unique=True, verbose_name=_('code'))
-    description = models.TextField(max_length=64, verbose_name=_('description'))
+    code_material_related = models.ForeignKey(
+        'Material',
+        on_delete=models.PROTECT,
+        related_name="mat_related_material",
+        verbose_name=_('related material'),
+        null=True,
+        blank=True)
 
     def __str__(self):
-        return self.code_material
+        return f'{self.code_material}'
 
 
 class Box(OrderedModel):
@@ -37,6 +43,14 @@ class Appointment(OrderedModel):
     material = models.ForeignKey(
         Material, on_delete=models.PROTECT, related_name="log_material", verbose_name=_('material'))
 
+    related_material = models.ForeignKey(
+        Material,
+        on_delete=models.PROTECT,
+        related_name="log_related_material",
+        verbose_name=_('related material'),
+        null=True,
+        blank=True)
+
     creator = models.ForeignKey(User, on_delete=models.PROTECT, editable=False, verbose_name=_('creator'))
 
     created = models.DateTimeField(auto_now_add=True, verbose_name=_('created'))
@@ -51,3 +65,8 @@ class Appointment(OrderedModel):
             obj.creator = request.user
         obj.updated_by = request.user
         obj.save()
+
+    # def save_model(self, request, obj, form, change):
+    #     # Passar request como argumento.
+    #     obj.created_updated(request)
+    #     super().save_model(request, obj, form, change)

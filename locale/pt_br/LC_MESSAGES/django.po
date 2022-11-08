@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-04 15:08-0300\n"
-"PO-Revision-Date: 2022-11-04 15:10-0300\n"
+"POT-Creation-Date: 2022-11-08 18:06-0300\n"
+"PO-Revision-Date: 2022-11-08 18:07-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -53,54 +53,58 @@ msgstr ""
 msgid "The box {box_list} is not empty"
 msgstr "A caixa {box_list}  não está vazia"
 
-#: .\config\core\models.py:14 .\config\core\models.py:24
+#: .\config\core\models.py:14 .\config\core\models.py:30
 msgid "code"
 msgstr "código"
 
-#: .\config\core\models.py:15 .\config\core\models.py:26
+#: .\config\core\models.py:19 .\config\core\models.py:50
+msgid "related material"
+msgstr "material relacionado"
+
+#: .\config\core\models.py:32
 msgid "description"
 msgstr "descrição"
 
-#: .\config\core\models.py:27
+#: .\config\core\models.py:33
 msgid "empty"
 msgstr "vazio"
 
-#: .\config\core\models.py:35
+#: .\config\core\models.py:41
 msgid "box"
 msgstr "caixa"
 
-#: .\config\core\models.py:38
+#: .\config\core\models.py:44
 msgid "material"
 msgstr "material"
 
-#: .\config\core\models.py:40
+#: .\config\core\models.py:54
 msgid "creator"
 msgstr "criador"
 
-#: .\config\core\models.py:42
+#: .\config\core\models.py:56
 msgid "created"
 msgstr "data"
 
-#: .\config\core\templates\core\appointment_scan.html:39
+#: .\config\core\templates\core\appointment_scan.html:27
 #: .\config\core\templates\core\core.html:24
 msgid "Scan"
 msgstr "Varredura"
 
-#: .\config\core\templates\core\appointment_scan.html:57
-#: .\config\core\templates\core\appointment_voice.html:58
+#: .\config\core\templates\core\appointment_scan.html:45
+#: .\config\core\templates\core\appointment_voice.html:46
 msgid "Save"
 msgstr "Salvar"
 
-#: .\config\core\templates\core\appointment_voice.html:40
+#: .\config\core\templates\core\appointment_voice.html:28
 #: .\config\core\templates\core\core.html:28
 msgid "Voice"
 msgstr "Voz"
 
-#: .\config\core\templates\registration\login.html:21
+#: .\config\core\templates\registration\login.html:20
 msgid "Already Logged!"
-msgstr "Login já feito!"
+msgstr "Você já fez login!"
 
-#: .\config\core\views.py:43 .\config\core\views.py:63
+#: .\config\core\views.py:47 .\config\core\views.py:72
 msgid "Appointment Done"
 msgstr "Apontamento feito"
 
