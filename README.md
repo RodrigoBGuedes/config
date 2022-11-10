@@ -1,9 +1,24 @@
 # Config
 
-App creating Appointments between two objects
+App creating Appointments between two objects. This project uses
+poetry to do the management of packages and virtual environments
 
-# Poetry
-If Poetry is not already installed this steps: https://python-poetry.org/docs/#installing-with-the-official-installer
+# Using Poetry
+If Poetry is not already installed and set follow this steps: 
+[Poetry Page](https://python-poetry.org/docs/#installing-with-the-official-installer)
 
-# Poetry commands to run:
+# Commands to run when the poetry is installed:
+To create virtual environment and install the packages run:
+```bash
 poetry install
+```
+
+To activate the virtual environment run:
+```bash
+poetry shell
+```
+
+You can run the server using:
+```bash
+poetry run python manage.py runserver
+```
