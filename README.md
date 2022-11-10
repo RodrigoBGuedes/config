@@ -1,14 +1,14 @@
+
 # Config
+Config is an application used to create Appointments between two objects.
 
-App creating Appointments between two objects. This project uses
-poetry to do the management of packages and virtual environments
+## Installing Poetry
+This project uses poetry to do the management of packages and virtual environments. 
+If Poetry is not already installed in your computer, follow this steps:
+[Poetry Instruction Page](https://python-poetry.org/docs/#installing-with-the-official-installer)
 
-# Using Poetry
-If Poetry is not already installed and set follow this steps: 
-[Poetry Page](https://python-poetry.org/docs/#installing-with-the-official-installer)
-
-# Commands to run when the poetry is installed:
-To create virtual environment and install the packages run:
+## Commands to run when the poetry is installed:
+To create a virtual environment and install the tools in pyproject.toml run:
 ```bash
 poetry install
 ```
